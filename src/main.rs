@@ -3,10 +3,13 @@
 
 #[allow(unused_imports)]
 use std::io::{self, prelude::*};
+use std::path::Path;
 use std::fs;
 
 fn main() -> io::Result<()> {
-    fs::create_dir("project")?;
+    if !Path::new("project").exists() {
+        fs::create_dir("project")?;
+    }
     Ok(())
     // sbt-set-version 1.1.5
     // cat > build.sbt << EOL
