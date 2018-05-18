@@ -14,7 +14,6 @@ fn main() -> io::Result<()> {
 
     let mut file = OpenOptions::new()
         .write(true)
-        .append(true)
         .create(true)
         .open(project.join("build.properties"))?;
     writeln!(file, "sbt.version={}", "1.1.5")?;
