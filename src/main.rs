@@ -8,9 +8,7 @@ use std::fs::{self, OpenOptions};
 
 fn main() -> io::Result<()> {
     let project = Path::new("project");
-    if !project.exists() {
-        fs::create_dir(project)?;
-    }
+    fs::create_dir_all(project)?;
 
     let mut file = OpenOptions::new()
         .write(true)
