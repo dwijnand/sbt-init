@@ -4,15 +4,22 @@
 #[allow(unused_imports)]
 use std::io::{self, prelude::*};
 use std::path::Path;
-use std::fs;
+use std::fs::{self, OpenOptions};
 
 fn main() -> io::Result<()> {
     let project = Path::new("project");
     if !project.exists() {
         fs::create_dir(project)?;
     }
+
+    let mut file = OpenOptions::new()
+        .write(true)
+        .append(true)
+        .create(true)
+        .open(project.join("build.properties"))?;
+    writeln!(file, "sbt.version={}", "1.1.5")?;
+
     Ok(())
-    // sbt-set-version 1.1.5
     // cat > build.sbt << EOL
     // val t = project in file(".")
     //
