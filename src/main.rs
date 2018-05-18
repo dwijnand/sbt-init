@@ -3,17 +3,15 @@
 
 #[allow(unused_imports)]
 use std::io::{self, prelude::*};
-use std::path::Path;
 use std::fs::{self, OpenOptions};
 
 fn main() -> io::Result<()> {
-    let project = Path::new("project");
-    fs::create_dir_all(project)?;
+    fs::create_dir_all("project")?;
 
     let mut file = OpenOptions::new()
         .write(true)
         .create(true)
-        .open(project.join("build.properties"))?;
+        .open("project/build.properties")?;
     writeln!(file, "sbt.version={}", "1.1.5")?;
 
     fs::write("build.sbt", r#"
@@ -24,7 +22,7 @@ organization in ThisBuild := "com.dwijnand"
 scalaVersion in ThisBuild := "2.12.6"
 "#.trim_left())?;
 
-    OpenOptions::new().write(true).create(true).open(project.join("plugins.sbt"))?;
+    OpenOptions::new().write(true).create(true).open("project/plugins.sbt")?;
 
     Ok(())
 }
