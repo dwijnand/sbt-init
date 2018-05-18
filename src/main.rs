@@ -1,8 +1,7 @@
 //! Create a new sbt build in an existing directory
 //! Author: Dale Wijnand <dale.wijnand@gmail.com>
 
-#[allow(unused_imports)]
-use std::io::{self, prelude::*};
+use std::io;
 use std::fs;
 
 fn main() -> io::Result<()> {
