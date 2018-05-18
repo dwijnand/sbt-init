@@ -27,6 +27,7 @@ organization in ThisBuild := "com.dwijnand"
 scalaVersion in ThisBuild := "2.12.4"
 "#.trim_left())?;
 
+    OpenOptions::new().write(true).create(true).open(project.join("plugins.sbt"))?;
+
     Ok(())
-    // touch project/plugins.sbt
 }
