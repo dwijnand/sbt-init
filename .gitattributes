@@ -1,0 +1,3 @@
+# Hide Cargo.lock diffs (by default)
+Cargo.lock -diff merge=ours
+Cargo.lock linguist-generated=true
