@@ -7,8 +7,9 @@ use std::path::Path;
 use std::fs;
 
 fn main() -> io::Result<()> {
-    if !Path::new("project").exists() {
-        fs::create_dir("project")?;
+    let project = Path::new("project");
+    if !project.exists() {
+        fs::create_dir(project)?;
     }
     Ok(())
     // sbt-set-version 1.1.5
