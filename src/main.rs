@@ -19,13 +19,14 @@ fn main() -> io::Result<()> {
         .open(project.join("build.properties"))?;
     writeln!(file, "sbt.version={}", "1.1.5")?;
 
+    fs::write("build.sbt", r#"
+val t = project in file(".")
+
+organization in ThisBuild := "com.dwijnand"
+     version in ThisBuild := "0.1.0-SNAPSHOT"
+scalaVersion in ThisBuild := "2.12.4"
+"#.trim_left())?;
+
     Ok(())
-    // cat > build.sbt << EOL
-    // val t = project in file(".")
-    //
-    // organization in ThisBuild := "com.dwijnand"
-    //      version in ThisBuild := "0.1.0-SNAPSHOT"
-    // scalaVersion in ThisBuild := "2.12.4"
-    // EOL
     // touch project/plugins.sbt
 }
