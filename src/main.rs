@@ -23,7 +23,7 @@ val t = project in file(".")
 
 organization in ThisBuild := "com.dwijnand"
      version in ThisBuild := "0.1.0-SNAPSHOT"
-scalaVersion in ThisBuild := "2.12.4"
+scalaVersion in ThisBuild := "2.12.6"
 "#.trim_left())?;
 
     OpenOptions::new().write(true).create(true).open(project.join("plugins.sbt"))?;
