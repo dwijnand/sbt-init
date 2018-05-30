@@ -1,8 +1,8 @@
 //! Create a new sbt build in an existing directory
 //! Author: Dale Wijnand <dale.wijnand@gmail.com>
 
-use std::io;
 use std::fs;
+use std::io;
 
 fn main() -> io::Result<()> {
     fs::create_dir_all("project")?;
