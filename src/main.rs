@@ -15,5 +15,15 @@ organization in ThisBuild := "com.dwijnand"
      version in ThisBuild := "0.1.0-SNAPSHOT"
 scalaVersion in ThisBuild := "2.12.6"
 "#.trim_left())?;
+    fs::create_dir_all("src/main/scala/t")?;
+    fs::write("src/main/scala/t/Main.scala", r#"
+package t
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    println("hi")
+  }
+}
+"#.trim_left())?;
     Ok(())
 }
