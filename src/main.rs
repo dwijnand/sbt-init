@@ -6,7 +6,7 @@ use std::io;
 
 fn main() -> io::Result<()> {
     fs::create_dir_all("project")?;
-    fs::write("project/build.properties", "sbt.version=1.1.6")?;
+    fs::write("project/build.properties", "sbt.version=1.2.0-RC1")?;
     fs::write("project/plugins.sbt", "")?;
     fs::write("build.sbt", r#"
 val t = project in file(".")
