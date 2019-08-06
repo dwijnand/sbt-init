@@ -13,7 +13,7 @@ val t = project in file(".")
 
 organization in ThisBuild := "com.dwijnand"
      version in ThisBuild := "0.1.0-SNAPSHOT"
-scalaVersion in ThisBuild := "2.12.8"
+scalaVersion in ThisBuild := "2.12.9"
 "#.trim_start())?;
     fs::create_dir_all("src/main/scala/t")?;
     fs::write("src/main/scala/t/Main.scala", r#"
