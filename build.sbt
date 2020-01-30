@@ -6,7 +6,4 @@ organization in ThisBuild := "com.dwijnand"
 scalaVersion in ThisBuild := "2.13.1"
 
 enablePlugins(GraalVMNativeImagePlugin)
-graalVMNativeImageOptions := List(
-  "--no-fallback",
-  "--initialize-at-build-time=scala.runtime.Statics$VM",
-)
+graalVMNativeImageOptions := List("--no-fallback")
