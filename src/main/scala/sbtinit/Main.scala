@@ -3,7 +3,7 @@ package sbtinit
 import better.files._
 
 object Main {
-  val sbtVersion = "1.3.7"
+  val sbtVersion = "1.3.8"
 
   def main(args: Array[String]): Unit = {
     file"project".createDirectory()
